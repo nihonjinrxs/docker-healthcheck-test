@@ -1,0 +1,15 @@
+{
+  "name": "docker_health_check_dummy_app",
+  "version": "0.0.1",
+  "description": "Dummy app to test Docker HEALTHCHECK command.",
+  "author": "ryan.b.harvey@gmail.com",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node ./app.js",
+    "test": "NODE_ENV=test mocha --exit --reporter=mocha-pretty-bunyan-nyan"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}

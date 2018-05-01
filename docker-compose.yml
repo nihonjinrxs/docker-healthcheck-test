@@ -1,0 +1,10 @@
+version: "2"
+
+services:
+  app:
+    build:
+      context: "."
+    environment:
+      NODE_ENV: development
+    ports:
+      - 4047:4047
