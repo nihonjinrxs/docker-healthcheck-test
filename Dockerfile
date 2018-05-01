@@ -14,6 +14,7 @@ COPY . /usr/src/app
 EXPOSE 4047
 
 HEALTHCHECK --interval=2s --timeout=1s --start-period=10s --retries=3 \
-    CMD node ./scripts/healthcheck.js
+#    CMD curl -f http://localhost:4047/ || exit 1
+    CMD node ./healthcheck.js
 
 CMD [ "node", "app.js" ]

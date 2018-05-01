@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 var http = require("http");
-var logger = require("../app/utils/logger")(require('file-name')(__filename));
 
 var options = {  
   host: "localhost",
@@ -14,16 +13,16 @@ var options = {
 
 var request = http.request(options, (res) => {  
   if (res.statusCode == 200) {
-    logger.info(`HEALTHCHECK SUCCESS: Status code ${res.statusCode} - ${res.body}`);
+    console.log(`HEALTHCHECK SUCCESS: Status code ${res.statusCode} - ${res.body}`);
     process.exit(0);
   } else {
-    logger.error(`HEALTHCHECK ERROR: Status code ${res.statusCode} - ${res.body}`);
+    console.error(`HEALTHCHECK ERROR: Status code ${res.statusCode} - ${res.body}`);
     process.exit(1);
   }
 });
 
 request.on('error', function(err) {  
-  logger.error(`HEALTHCHECK ERROR: ${err.message}`);
+  console.error(`HEALTHCHECK ERROR: ${err.message}`);
   process.exit(1);
 });
 

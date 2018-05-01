@@ -7,9 +7,11 @@
   "private": true,
   "scripts": {
     "start": "node ./app.js",
-    "test": "NODE_ENV=test mocha --exit --reporter=mocha-pretty-bunyan-nyan"
+    "test": "./test_healthcheck"
   },
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "shelljs": "^0.8.1"
   }
 }
